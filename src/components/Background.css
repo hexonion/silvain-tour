@@ -1,0 +1,84 @@
+/* ==== Основной фон ==== */
+.site-background {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(10px) brightness(0.68) saturate(0.85);
+  transform: scale(1.05);
+  pointer-events: none;
+  animation: bgDrift 40s ease-in-out infinite alternate,
+    bgPulse 12s ease-in-out infinite;
+}
+
+@keyframes bgDrift {
+  0% {
+    transform: scale(1.05) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.12) translate3d(-1.5%, -1%, 0);
+  }
+}
+
+@keyframes bgPulse {
+  0%, 100% {
+    filter: blur(10px) brightness(0.68) saturate(0.85);
+  }
+  50% {
+    filter: blur(11px) brightness(0.75) saturate(0.95);
+  }
+}
+
+.site-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(10, 10, 10, 0.25) 0%,
+    rgba(10, 10, 10, 0.6) 100%
+  );
+}
+
+/* ==== Слой с пульсирующим бордовым светом ==== */
+.site-background-glow {
+  position: fixed;
+  inset: -10%;
+  z-index: -2;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(107, 30, 30, 0.18) 0%,
+    transparent 45%
+  );
+  animation: glowMove 24s ease-in-out infinite alternate,
+    glowPulse 8s ease-in-out infinite;
+  mix-blend-mode: screen;
+  opacity: 0.7;
+}
+
+@keyframes glowMove {
+  0% {
+    transform: translate3d(-8%, -4%, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(6%, 5%, 0) scale(1.1);
+  }
+  66% {
+    transform: translate3d(-5%, 8%, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(8%, -6%, 0) scale(1.12);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}

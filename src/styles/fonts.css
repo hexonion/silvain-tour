@@ -1,0 +1,26 @@
+/* Anton — основной тяжёлый гротеск */
+@font-face {
+  font-family: 'Anton';
+  src: url('../assets/fonts/Anton.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* UnifrakturCook — готический акцент */
+@font-face {
+  font-family: 'UnifrakturCook';
+  src: url('../assets/fonts/UnifrakturCook.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter — вариативный, все веса 100–900 */
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

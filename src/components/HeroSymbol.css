@@ -1,0 +1,13 @@
+.hero-symbol {
+  width: clamp(140px, 22vw, 280px);
+  margin: clamp(2rem, 5vw, 4rem) auto 0;
+  display: flex;
+  justify-content: center;
+  opacity: 0.9;
+}
+
+.hero-symbol svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
